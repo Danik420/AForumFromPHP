@@ -17,18 +17,18 @@ class NavbarSeeder extends Seeder
         $links = [
             [
                 'name' => 'Home',
-                'route' => 'welcome.indext',
+                'route' => 'home',
                 'ordering' => 1,
             ],
             [
-                'name' => 'Post',
-                'route' => 'post.index',
+                'name' => 'Products',
+                'route' => 'products.index',
                 'ordering' => 2,
             ],
             [
-            //    'name' => 'About US',
-            //    'route' => 'about.us',
-            //    'ordering' => 3,
+                'name' => 'About US',
+                'route' => 'about.us',
+                'ordering' => 3,
             ]
         ];
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -16,16 +17,16 @@ class UsersController extends Controller
         $this->validate($request, [
             'name' => 'required | max:255',
             'email' => 'required | email | max:255 | unique:users',
-            'password' => 'required | confirmed | min:6'.
+            'password' => 'required | confirmed | min:6'
         ]);
 
-        $user = \App\User::create([
+        $user = User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password'))
         ]);
 
-        auth() -> login($user),
+        auth() -> login($user);
         flash(auth()->user()->name . '쨩, 환영해요옹~ ');
 
         return redirect('welcome.index');

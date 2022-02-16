@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>{{ $post->title }}</h1>
+    <br/>
+    <h2>{{ $post->title }}</h2>
 
     <article>
         {{ $post->body }}
@@ -11,6 +12,7 @@
         <img src=" {{ $post->thumbnail }}">
 
     </article>
+    <br/>
 
     <h3>
         <a href="{{ route('post.edit', $post->id) }}" class="btn btn-primary"> 글 수정하기 </a>

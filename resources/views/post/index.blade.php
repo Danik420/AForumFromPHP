@@ -1,8 +1,8 @@
 @extends('layouts.master')
+
 @section('content')
-    <h1>All Posts</h1>
-
-
+    <br/>
+    <h2>자유게시판</h2>
 
     <ul class="list-group">
         @foreach($posts as $post)
@@ -13,7 +13,6 @@
     </ul>
     {{ $posts->links('pagination::bootstrap-5') }}
     {{-- bootstrap-4 아니면 5 둘 중에 스타일 고를 수 있음 --}}
-
 
     <h3>
         <a href="{{ route('post.create') }}" class="btn btn-primary"> 글 작성하기 </a>

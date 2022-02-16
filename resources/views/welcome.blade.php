@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
-    <h1>Danik Forum</h1>
+    <h1>Welcome to Danik Forum</h1>
 
-    <h2>어서오세용!!!!</h2>
+    <p>- the most useless articles of the world</p>
 
 
 

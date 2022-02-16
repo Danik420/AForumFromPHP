@@ -1,23 +1,29 @@
+
 <html>
+
 <head>
     @csrf
+
     <title>Danik Forum</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </head>
 
+
 <body>
-    @include('partial.navigation')
 
-    <div class="container">
-        @include('flash::message')
-        @yield('content')
-    </div>
+@include('partials.navigation')
 
-    {{-- @include('layouts.partial.footer') --}}
+<div class="container">
+    @include('flash::message')
+    @yield('content')
+</div>
 
-    <script src="=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    @yield('script')
+{{-- @include('layouts.partials.footer') --}}
+
+
+<script src="=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+@yield('script')
 </body>
 </html>
 
