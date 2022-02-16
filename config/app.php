@@ -164,6 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -176,6 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        Laracasts\Flash\FlashServiceProvider::class,
 
     ],
 
@@ -192,6 +195,6 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...
-    ])->toArray(),
+    ])->toArray(), 'Flash' => Laracasts\Flash\Flash::class
 
 ];

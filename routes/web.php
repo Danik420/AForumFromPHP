@@ -24,11 +24,11 @@ Route::resource('post', 'PostController');
 // 사용자 가입
 Route::get('auth/register', [
     'as' => 'users.create',
-    'uses' => 'UserController@create'
+    'uses' => 'UsersController@create'
 ]);
 Route::post('auth/register', [
     'as' => 'users.store',
-    'uses' => 'UserController@store'
+    'uses' => 'UsersController@store'
 ]);
 Route::get('auth/confirm/{code}', [
     'as' => 'users.confirm',
