@@ -180,6 +180,8 @@ return [
 
         Laracasts\Flash\FlashServiceProvider::class,
 
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -193,8 +195,10 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
+    'aliases' => [Facade::defaultAliases()->merge([
         // ...
-    ])->toArray(), 'Flash' => Laracasts\Flash\Flash::class
+    ])->toArray(), 'Flash' => Laracasts\Flash\Flash::class,],
+
+    Intervention\Image\Facades\Image::class
 
 ];

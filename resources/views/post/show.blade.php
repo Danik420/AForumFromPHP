@@ -2,16 +2,28 @@
 
 @section('content')
     <br/>
-    <h2>{{ $post->title }}</h2>
-
-    <article>
-        {{ $post->body }}
-    </article>
-
-    <article>
-        <img src=" {{ $post->thumbnail }}">
-
-    </article>
+    <div class="container">
+        <div class="row justify-content-left">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>{{ $post->title }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                        <article>
+                            {{ $post->body }}
+                        </article>
+                        <br/>
+                        <article>
+                            <img src=" {{ $post->thumbnail }}">
+                        </article>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <br/>
 
     <h3>
@@ -30,5 +42,6 @@
 
         <a href="{{ route('post.index') }}" class="btn btn-primary"> 글 목록으로 </a>
     </h3>
+
 
 @endsection
