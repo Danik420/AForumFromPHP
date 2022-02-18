@@ -1,13 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
+    <br/>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-left">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Products</div>
+                    <div class="card-header">Sign In</div>
                     <div class="card-body">
-                        <p>You are in Products Page</p>
+                        <p>앙로그인띠</p>
                     </div>
                 </div>
             </div>

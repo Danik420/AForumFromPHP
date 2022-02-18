@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h3>{{ $post->title }}</h3>
+                        <h4>{{ $post->title }}</h4>
                     </div>
                     <div class="card-body">
                         <p>
@@ -16,7 +16,7 @@
                         </article>
                         <br/>
                         <article>
-                            <img src=" {{ $post->thumbnail }}">
+                            <img src="{{ $post->thumbnail }}" style="max-width: 805">
                         </article>
                         </p>
                     </div>

@@ -5,11 +5,15 @@
     <h2>자유게시판</h2>
 
     <ul class="list-group">
-        @foreach($posts as $post)
+        @forelse($posts as $post)
             <li class="list-group-item">
                 <a href="{{  route("post.show", $post->id)  }}">{{  $post->title  }}</a>
             </li>
-        @endforeach
+        @empty
+            <li>
+                정보가 없습니다.
+            </li>
+        @endforelse
     </ul>
     {{ $posts->links('pagination::bootstrap-5') }}
     {{-- bootstrap-4 아니면 5 둘 중에 스타일 고를 수 있음 --}}

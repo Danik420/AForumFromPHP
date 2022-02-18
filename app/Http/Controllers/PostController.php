@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use app;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Post;
 use Illuminate\Http\Request;
-
-
 use Illuminate\Support\Facades\Storage;
-use Validator;
 use Input;
 
 
@@ -20,7 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::query()->orderBy('created_at', 'desc')->paginate(5);
 
         return view('post.index', compact('posts'));
 
@@ -57,17 +56,15 @@ class PostController extends Controller
 
         $post = new Post;
 
-        if ($request->hasFile('thumbnail')) {
-
-            if ($request->hasfile('thumbnail')) {
+            if ($request->hasfile('thumbnail'))
+            {
                 $uploadFile = $request->file('thumbnail');
                 $fileHashName = time() . '-' . $uploadFile->getClientOriginalName();
                 $filePath = $uploadFile->storeAs('public/thumbnails', $fileHashName);
                 $thumbnail_url = Storage::disk('local')->url($filePath);
                 $post->thumbnail = $thumbnail_url ?? '';
-            }
 
-        }
+            }
 
         $post->title = $request['title'];
         $post->body = $request['body'];

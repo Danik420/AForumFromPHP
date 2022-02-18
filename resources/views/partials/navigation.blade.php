@@ -11,7 +11,7 @@
                 <ul class="navbar-nav ml-auto" >
                     @foreach ($navbars as $navbarItem)
                         <li class="nav-item" >
-                            <a class="nav-link" href="{{ route($navbarItem->route) }}">{{ $navbarItem->name }}</a>
+                            <a class="nav-link" href="/{{ $navbarItem->route }}">{{ $navbarItem->name }}</a>
                         </li>
                     @endforeach
                 </ul>

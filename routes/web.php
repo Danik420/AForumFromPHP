@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -69,12 +70,10 @@ Route::post('auth/reset', [
     'uses' => 'PasswordsController@postReset'
 ]);
 
-Auth::routes();
+// Auth::routes();
 
+//Route::get('about.us', 'FrontController@aboutUs');
+//Route::get('sign.in', 'FrontController@signIn');
 
-Route::get('home', [FrontController::class, 'home'])->name('home');
-Route::get('products', [FrontController::class, 'products'])->name('products.index');
-Route::get('about-us', [FrontController::class, 'aboutUs'])->name('about.us');
-
-Route::get('/intervention', [InterventionController::class, 'index'])->name('index');
-Route::post('/intervention', [InterventionController::class, 'store'])->name('store');
+Route::get('about.us', [FrontController::class, 'aboutUs'])->name('about.us');
+Route::get('sign.in', [FrontController::class, 'signIn'])->name('sign.in');

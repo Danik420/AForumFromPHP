@@ -11,19 +11,10 @@ class FrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function home()
+    public function index()
     {
-        return view('home');
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function products()
-    {
-        return view('products');
+        $posts = [];
+        return view('post.index',compact('posts'));
     }
 
     /**
@@ -33,6 +24,16 @@ class FrontController extends Controller
      */
     public function aboutUs()
     {
-        return view('aboutUs');
+        return view('partials.aboutUs');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function signIn()
+    {
+        return view('partials.signIn');
     }
 }

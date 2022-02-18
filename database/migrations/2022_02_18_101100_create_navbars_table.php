@@ -31,4 +31,4 @@ class CreateNavbarsTable extends Migration
     {
         Schema::dropIfExists('navbars');
     }
-};
+}
