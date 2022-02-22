@@ -2,43 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+/*    protected  $fillable = ['confirm_code', 'activated', '...'];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected  $hidden = ['confirm_code', '...'];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected  $casts = ['activated' => 'boolean'];*/
+    protected $guarded = [];
+//    protected $fillable = ['title', 'body', 'thumnail'];
+//    둘 중에 하나만 써놓으면 됨 guarded는 이것만 허용할거야(공백인 경우 전부 허용) fillable은 이것만 허용할 거야(공백일 경우 전부 금지)
+
 }

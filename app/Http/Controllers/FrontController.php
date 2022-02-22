@@ -14,7 +14,7 @@ class FrontController extends Controller
     public function index()
     {
         $posts = [];
-        return view('post.index',compact('posts'));
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -24,7 +24,7 @@ class FrontController extends Controller
      */
     public function aboutUs()
     {
-        return view('partials.aboutUs');
+        return view('partials.aboutus');
     }
 
     /**
@@ -32,8 +32,9 @@ class FrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function signIn()
+    public function Login()
     {
-        return view('partials.signIn');
+        return view('이따가로그인으로바꿀거임');
     }
 }
+

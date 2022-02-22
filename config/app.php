@@ -197,7 +197,9 @@ return [
         // Facade::defaultAliases()->merge([])->toArray(),
                     // ㄴ 얘 없어도 Flash 정상 동작하는데 질문해봐야겠다.
 
-        'Flash' => Laracasts\Flash\Flash::class
+        'Flash' => Laracasts\Flash\Flash::class,
+
+        'Route' => Illuminate\Support\Facades\Route::class,
 
     ]
 
