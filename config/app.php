@@ -177,6 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\JetstreamServiceProvider::class,
 
         Laracasts\Flash\FlashServiceProvider::class
 
@@ -193,14 +195,11 @@ return [
     |
     */
 
-    'aliases' => [
-        // Facade::defaultAliases()->merge([])->toArray(),
-                    // ㄴ 얘 없어도 Flash 정상 동작하는데 질문해봐야겠다.
-
+    'aliases' => Facade::defaultAliases()->merge([
         'Flash' => Laracasts\Flash\Flash::class,
-
         'Route' => Illuminate\Support\Facades\Route::class,
+    ])->toArray(),
 
-    ]
+
 
 ];

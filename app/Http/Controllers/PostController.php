@@ -56,15 +56,15 @@ class PostController extends Controller
 
         $post = new Post;
 
-            if ($request->hasfile('thumbnail'))
-            {
-                $uploadFile = $request->file('thumbnail');
-                $fileHashName = time() . '-' . $uploadFile->getClientOriginalName();
-                $filePath = $uploadFile->storeAs('public/thumbnails', $fileHashName);
-                $thumbnail_url = Storage::disk('local')->url($filePath);
-                $post->thumbnail = $thumbnail_url ?? '';
+        if ($request->hasfile('thumbnail'))
+        {
+            $uploadFile = $request->file('thumbnail');
+            $fileHashName = time() . '-' . $uploadFile->getClientOriginalName();
+            $filePath = $uploadFile->storeAs('public/thumbnails', $fileHashName);
+            $thumbnail_url = Storage::disk('local')->url($filePath);
+            $post->thumbnail = $thumbnail_url ?? '';
 
-            }
+        }
 
         $post->title = $request['title'];
         $post->body = $request['body'];

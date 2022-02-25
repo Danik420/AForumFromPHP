@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
-            $table->string('thumbnail');
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('posts');
     }
 };

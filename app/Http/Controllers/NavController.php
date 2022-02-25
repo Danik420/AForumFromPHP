@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FrontController extends Controller
+class NavController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class FrontController extends Controller
      */
     public function aboutUs()
     {
-        return view('partials.aboutus');
+        return view('aboutus');
     }
 
     /**
@@ -32,9 +32,13 @@ class FrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function Login()
+    public function signIn()
     {
-        return view('이따가로그인으로바꿀거임');
+        return view('auth.login');
+    }
+
+    public function signUp()
+    {
+        return view('auth.register');
     }
 }
-
